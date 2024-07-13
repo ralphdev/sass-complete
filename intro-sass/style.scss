@@ -36,16 +36,25 @@ $font-sm: 20px;
     text-align: center;
 }
 
-.banner h1 {
-    @include headingStyle($font-lg);
+.heading {
+    color: $color-primary;
+    font-size: $font-lg;
+    background-color: $color-secundary;
+    text-align: center;
+}
+
+h1 {
+
+    @extend .heading;
+    @include transition(color .5s, background-color 1s);
+
+    &:hover{
+        background-color: green;
+    }
+
 }
 
 .footer h3 {
-    @include headingStyle($font-md);
-    @include transition(color .5s, background-color 1s);
 
-    &:hover {
-        color: $color-tertiary;
-        background-color: $color-primary;
-    }
+    @extend h1;
 }
